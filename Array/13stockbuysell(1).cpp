@@ -32,7 +32,7 @@ int main()
     int price[n];
     for(int i=0;i<n;i++)
         cin>>price[i];
-    maxProfit(p,0,n);
+    maxProfit(price,0,n);
     return 0;
 }
 
