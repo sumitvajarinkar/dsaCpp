@@ -1,4 +1,5 @@
-//Selection sort (select min swap)
+//Selection sort
+//Find the minimum element in unsorted array and swap it with element at begining
 //O(n^2) O(1)
 /*
 i/p : 22 64 90 11 25 34 12
@@ -9,22 +10,18 @@ using namespace std;
 
 void selectionSort(int arr[], int n)
 {
-    int i, j, min;
-
-    for (i = 0; i < n; i++)
+    for(int i=0;i<n;i++)
     {
-        min = i;			//store 1st element to compare
-        for (j = i+1; j < n; j++)
-          {
-          	if (arr[j] < arr[min])	// we compare each element with next
-            	min = j;				//which minimum will store in min variable
-		  }				
-
-    // Swap the found minimum element with the first element
-         int temp = arr[i];
-             arr[i]  = arr[min];
-    	     arr[min]  = temp;
-    }
+    	for(int j=i+1;j<n;j++)
+    	{
+    		if(arr[j]<arr[i])
+    		{
+    			int temp=arr[j];
+    			arr[j]=arr[i];
+    			arr[i]=temp;
+			}
+		}
+	}
 }
 void printit(int arr[],int n)
 {
@@ -46,6 +43,5 @@ int main()
 		cout<<arr[i]<<" ";
 	selectionSort(arr,n);
 	printit(arr,n);
-	
+	return 0;
 }
-
