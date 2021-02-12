@@ -21,7 +21,7 @@ void bubbleSort(int arr[], int n)
    		if(arr[i]>arr[i+1])
    		{
    			int temp=arr[i];
-   			arr[i]=arr[i+1];
+   			arr[i]=arr[i+1];	//swap
    			arr[i+1]=temp;
 		}
 	}
