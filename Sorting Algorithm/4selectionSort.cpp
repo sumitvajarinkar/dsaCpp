@@ -17,7 +17,7 @@ void selectionSort(int arr[], int n)
     		if(arr[j]<arr[i])
     		{
     			int temp=arr[j];
-    			arr[j]=arr[i];
+    			arr[j]=arr[i];		//swap
     			arr[i]=temp;
 			}
 		}
