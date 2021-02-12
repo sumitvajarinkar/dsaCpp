@@ -12,15 +12,15 @@ void insertionSort(int arr[], int n)
 { 
    for (int i = 1; i < n; i++) 
    { 
-       int key = arr[i]; //2nd element
-       int j = i-1;		 //1st element
+       int key = arr[i]; //next
+       int j = i-1;		 //prev
   
        /* Move elements of arr[0..i-1], that are 
           greater than key, to one position ahead 
           of their current position */
        while (j >= 0 && arr[j] > key) 
        { 
-           arr[j+1] = arr[j]; //if 1st is greater than 2nd then move element by one 
+           arr[j+1] = arr[j]; // move element by one 
            j--; 
        } 
        arr[j+1] = key; 
@@ -47,5 +47,5 @@ int main()
 		cout<<arr[i]<<" ";
 	insertionSort(arr,n);
 	printit(arr,n);
-	return 0;
+	
 }
