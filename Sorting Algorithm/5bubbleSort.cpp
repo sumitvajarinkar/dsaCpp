@@ -1,5 +1,8 @@
-//Bubble sort (neighbour if greater swap)
+//Bubble sort
+//Repeatedly swap two adjacent elements if they are in wrong order (l>=R)
 //O(n^2) O(1)
+// no. of iteration = no. of elements - 1
+
 
 #include<iostream>
 using namespace std;
@@ -10,21 +13,21 @@ o/p : 11 12 22 25 34 64 90
 
 void bubbleSort(int arr[], int n) 
 { 
-   int i, j; 
-   for (i = 0; i < n; i++)       
-  {
-  	
-       // Last i elements are already in place    
-       for (j = 0; j < n-i-1; j++)  
-         {
-         	if(arr[j]>arr[j+1])   //if 1st element greater than 2nd swap and goes on
-          	{ 
-           	int temp = arr[j];
-             arr[j]  = arr[j+1];
-    	     arr[j+1]  = temp;
-		  	}
-		 }
-  }
+   int count=1;
+   while(count<n)
+   {
+   	for(int i=0;i<n-count;i++)	//store big element at last so n-count
+   	{
+   		if(arr[i]>arr[i+1])
+   		{
+   			int temp=arr[i];
+   			arr[i]=arr[i+1];
+   			arr[i+1]=temp;
+		}
+	}
+   count++;
+   }
+  
 } 
 
 void printit(int arr[],int n)
@@ -33,6 +36,7 @@ cout<<"\nSorting:\n";
 	for(int i=0;i<n;i++)
 		cout<<arr[i]<<" ";	
 }
+
 int main()
 {
 	int n;
@@ -45,8 +49,7 @@ int main()
 	cout<<"Before sorting:\n";
 	for(int i=0;i<n;i++)
 		cout<<arr[i]<<" ";
-	bubbleSort(arr,n);
+	bubbleSort(arr,n);	
 	printit(arr,n);
-	
+	return 0;
 }
-
