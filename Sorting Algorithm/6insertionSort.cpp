@@ -1,4 +1,5 @@
-//Insertion sort sort (neighbour if greater swap)
+//Insertion sort sort
+//Insert an element from unsorted array to its correct position in sorted array
 //O(n^2) O(1)
 
 #include<iostream>
@@ -7,27 +8,24 @@ using namespace std;
 i/p : 22 64 90 11 25 34 12
 o/p : 11 12 22 25 34 64 90
 */
-
 void insertionSort(int arr[], int n) 
 { 
-   int i, key, j; 
-   for (i = 1; i < n; i++) 
+   for (int i = 1; i < n; i++) 
    { 
-       key = arr[i]; 
-       j = i-1; 
+       int key = arr[i]; //2nd element
+       int j = i-1;		 //1st element
   
        /* Move elements of arr[0..i-1], that are 
           greater than key, to one position ahead 
           of their current position */
        while (j >= 0 && arr[j] > key) 
        { 
-           arr[j+1] = arr[j]; 
-           j = j-1; 
+           arr[j+1] = arr[j]; //if 1st is greater than 2nd then move element by one 
+           j--; 
        } 
        arr[j+1] = key; 
    } 
 } 
-
 
 void printit(int arr[],int n)
 {
@@ -49,6 +47,5 @@ int main()
 		cout<<arr[i]<<" ";
 	insertionSort(arr,n);
 	printit(arr,n);
-	
+	return 0;
 }
-
