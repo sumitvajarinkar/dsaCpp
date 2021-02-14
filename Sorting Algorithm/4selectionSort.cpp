@@ -1,6 +1,7 @@
 //Selection sort
 //Find the minimum element in unsorted array and swap it with element at begining
 //O(n^2) O(1)
+//Not stable as bubble and Insertion sort
 /*
 i/p : 22 64 90 11 25 34 12
 o/p : 11 12 22 25 34 64 90
