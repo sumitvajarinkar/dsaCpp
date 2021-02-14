@@ -1,6 +1,6 @@
 //Insertion sort sort
 //Insert an element from unsorted array to its correct position in sorted array
-//O(n^2) O(1)
+//Best - O(n^2) O(1), worst - O(n) O(1)
 
 #include<iostream>
 using namespace std;
