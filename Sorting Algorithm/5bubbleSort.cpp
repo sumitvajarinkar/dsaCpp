@@ -1,6 +1,7 @@
 //Bubble sort
 //Repeatedly swap two adjacent elements if they are in wrong order (l>=R)
-//O(n^2) O(1)
+//Best - O(n^2) O(1), worst - O(n) O(1)
+//Stable 
 // no. of iteration = no. of elements - 1
 
 
