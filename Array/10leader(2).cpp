@@ -7,19 +7,21 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-int leader(int arr[],int n)
+vector<int>leader(int arr[],int n)
 {
-    int curr_leader=arr[n-1];
-	cout<<curr_leader<<" ";   //print last
+    vector<int>v;
+      int max=0;
 
-    for(int i=n-2;i>=0;i--) // traverse from second last element to 0th
+    for (int i=n-1;i>=0;i--)
     {
-        if(curr_leader<arr[i])
+        if (arr[i]>=max)
         {
-            curr_leader=arr[i];  //keep track of large element save in curr_leader
-            cout<<curr_leader<<" ";
+            max=arr[i];
+            v.push_back(arr[i]);
         }
     }
+    reverse(v.begin(),v.end());
+    return v;
 }
 int main()
 {
@@ -28,7 +30,9 @@ int main()
     int arr[n];
     for(int i=0;i<n;i++)
         cin>>arr[i];
-	leader(arr,n);
+	vector<int>varray=leader(arr,n);
+	for(auto i=varray.begin();i<varray.end();i++)
+        cout<<*i<<" ";
     return 0;
 }
 
