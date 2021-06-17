@@ -7,6 +7,7 @@ o/p : 4(index of 2)
 
 #include<bits/stdc++.h>
 using namespace std;
+/*
 int arrayRotated(int arr[],int n)
 {
 	if(arr[0] < arr[n-1]) //base condition
@@ -71,6 +72,40 @@ int elementSearchRotated(int arr[],int n, int x)
 	//2 5 6 8
 	    return binarySearch(arr,index,n-1,x);
 }
+*/
+
+
+int elementSearchRotated(int arr[],int n, int x){
+	int low=0,high=n-1;
+	while(low<=high){
+		int mid=(low+high)/2;
+		if(arr[mid] == x)
+			return mid;
+
+		//left side sorted
+		if(arr[low] <= arr[mid]){
+			if(x >= arr[low] && x <= arr[mid]){
+				high=mid-1;
+			}
+			else{
+				low=mid+1;
+			}
+		}
+
+		//right side sorted
+		else
+		{
+			if(x >= arr[mid] && x <=arr[high]){
+				low=mid+1;
+			}
+			else{
+				high=mid-1;
+			}
+		}
+	}
+return -1;
+}
+
 int main()
 {
 	int n,x;
