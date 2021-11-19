@@ -58,7 +58,7 @@ int knapSackTopDown(int wt[], int val[], int cap, int n)
             if(i==0 || j==0)
             {
                 t[i][j]=0;
-
+	    }
             //if sack is empty
             else if(wt[i-1] <= j)
             {
